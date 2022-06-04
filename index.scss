@@ -1,0 +1,87 @@
+:root {
+    --color1: hsl(234, 90.9%, 4.3%);
+    --color2: white;
+    --font1: 3em;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// global
+.pointer {
+    cursor: pointer;
+}
+
+main {
+    padding: 2em;
+    height: 100vh;
+    background-color: var(--color1);
+}
+
+// navBar
+.navBar {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+
+    .logo {
+        justify-self: start;
+
+        img {
+            width: 100%;
+            height: 6em;
+        }
+    }
+
+    .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        background-color: var(--color2);
+        padding: 3em;
+
+        .navLinks {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        a {
+            font-size: var(--font1);
+            color: var(--color1);
+            text-decoration: none;
+            margin-bottom: 1em;
+        }
+    }
+
+    .navIcon {
+        justify-self: end;
+        z-index: 1000;
+
+        .top,
+        .bottom {
+            width: 4em;
+            height: 2px;
+            background-color: hsl(0, 0%, 100%);
+        }
+
+        .top {
+            margin-bottom: 1.5em;
+        }
+    }
+}
