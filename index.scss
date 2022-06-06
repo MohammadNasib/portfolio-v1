@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
 :root {
-    --color1: hsl(234, 90.9%, 4.3%);
-    --color2: white;
+    --color1: white;
+    --color2: hsl(216, 15%, 12.3%);
     --font1: 3em;
 }
 
 html {
     font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 *,
@@ -22,37 +25,64 @@ html {
     cursor: pointer;
 }
 
+// used in js
+
+.right {
+    right: 0 !important;
+}
+.bgWhite {
+    height: 45% !important;
+
+    .top,
+    .bottom {
+        background-color: var(--color1) !important;
+    }
+
+    .top {
+        transform: rotate(-45deg) translate(-6px, 9px);
+    }
+
+    .bottom {
+        transform: rotate(45deg) translate(-6px, -10px);
+    }
+}
+
+// main styles
 main {
     padding: 2em;
-    height: 100vh;
     background-color: var(--color1);
+    letter-spacing: 3px;
 }
 
 // navBar
 .navBar {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: repeat(12, 1fr);
     align-items: center;
 
     .logo {
+        grid-column: 1/3;
         justify-self: start;
 
         img {
-            width: 100%;
-            height: 6em;
+            height: 5em;
         }
     }
 
+    // menu
     .menu {
-        display: none;
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%;
+        display: flex;
         flex-direction: column;
+        width: 70%;
         height: 100%;
         justify-content: center;
         background-color: var(--color2);
         padding: 3em;
+        transition: all 0.5s ease-in-out;
+        z-index: 100;
 
         .navLinks {
             display: flex;
@@ -65,23 +95,74 @@ main {
             font-size: var(--font1);
             color: var(--color1);
             text-decoration: none;
-            margin-bottom: 1em;
+            padding: 0.7em 1em;
+
+            &:hover {
+                letter-spacing: 5px;
+                transform: scale(1.1);
+                transition: all 0.15s ease-in-out;
+            }
         }
     }
 
+    // nav icon
     .navIcon {
+        display: flex;
+        flex-direction: column;
+        height: 40%;
+        justify-content: space-between;
+        grid-column: 11/13;
         justify-self: end;
         z-index: 1000;
+
+        &:hover {
+            transition: all 0.15s ease-in-out;
+            transform: scale(1.1);
+        }
 
         .top,
         .bottom {
             width: 4em;
             height: 2px;
-            background-color: hsl(0, 0%, 100%);
+            background-color: var(--color2);
+            transition: all 0.5s ease-in-out;
         }
+    }
+}
 
-        .top {
-            margin-bottom: 1.5em;
+// HOME SECTION
+.home {
+    display: grid;
+    gap: 4em;
+    margin-top: 5em;
+
+    .img {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red;
         }
+    }
+
+    h3 {
+        font-size: 2.3em;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin: 0.3em 0;
+    }
+
+    h5 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1.7em;
+        margin-top: 1em;
+        max-width: 33ch;
     }
 }
