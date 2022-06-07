@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 :root {
     --color1: white;
     --color2: hsl(216, 15%, 12.3%);
-    --font1: 3em;
+    --color3: hsl(216, 10%, 43.2%);
+    --font1: 2.7em;
+    --font2: 2em;
+    --font3: 1.7em;
 }
 
 html {
     font-size: 62.5%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 *,
@@ -95,10 +97,11 @@ main {
             font-size: var(--font1);
             color: var(--color1);
             text-decoration: none;
-            padding: 0.7em 1em;
+            padding: 0.8em 1em;
+            font-weight: 300;
 
             &:hover {
-                letter-spacing: 5px;
+                letter-spacing: 0.2em;
                 transform: scale(1.1);
                 transition: all 0.15s ease-in-out;
             }
@@ -148,21 +151,43 @@ main {
     }
 
     h3 {
-        font-size: 2.3em;
+        font-size: var(--font2);
+        letter-spacing: 0.3em;
+        letter-spacing: 7px;
+        color: var(--color3);
+        font-weight: 400;
     }
 
     h1 {
-        font-size: 3em;
+        font-size: var(--font1);
         margin: 0.3em 0;
-    }
-
-    h5 {
-        font-size: 1.2em;
+        color: var(--color2);
     }
 
     p {
-        font-size: 1.7em;
+        font-size: var(--font3);
         margin-top: 1em;
-        max-width: 33ch;
+        letter-spacing: 0.2em;
+        font-weight: 300;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 2em 1.5em;
+        flex-wrap: wrap;
+
+        .btn {
+            font-size: var(--font2);
+            background-color: var(--color1);
+            border: 1px solid var(--color2);
+            padding: 0.8em 1em;
+            flex-grow: 1;
+
+            &:hover {
+                background-color: var(--color2);
+                color: var(--color1);
+                transition: all ease-in-out 0.2s;
+            }
+        }
     }
 }
