@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 :root {
-  --color1: white;
+  --color1: hsl(25.7, 30.4%, 95.5%);
   --color2: hsl(216, 15%, 12.3%);
   --color3: hsl(216, 10%, 43.2%);
   --font1: 2.7em;
@@ -11,6 +11,7 @@
 html {
   font-size: 62.5%;
   font-family: 'Poppins', sans-serif;
+  background-color: var(--color1);
 }
 
 *,
@@ -50,19 +51,26 @@ html {
 }
 
 main {
-  padding: 2em;
+  padding: 0 2em 3em;
   background-color: var(--color1);
   letter-spacing: 3px;
 }
 
 .navBar {
+  position: fixed;
+  width: calc(100% - 4em);
+  top: 0;
+  padding: 2em 0 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
+  justify-items: end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: var(--color1);
+  z-index: 1000;
 }
 
 .navBar .logo {
@@ -108,8 +116,9 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -170,11 +179,15 @@ main {
   display: -ms-grid;
   display: grid;
   gap: 4em;
-  margin-top: 5em;
+  margin-top: 17em;
 }
 
 .home .img {
   position: relative;
+}
+
+.home .img img {
+  border-radius: 40%;
 }
 
 .home .img::after {
@@ -195,13 +208,13 @@ main {
 
 .home h1 {
   font-size: var(--font1);
-  margin: 0.3em 0;
+  margin: 0.2em 0;
   color: var(--color2);
 }
 
 .home p {
   font-size: var(--font3);
-  margin-top: 1em;
+  margin-top: 1.2em;
   letter-spacing: 0.2em;
   font-weight: 300;
 }
@@ -213,6 +226,7 @@ main {
   gap: 2em 1.5em;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 4em 0;
 }
 
 .home .buttons .btn {
@@ -230,5 +244,85 @@ main {
   color: var(--color1);
   -webkit-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
+}
+
+@media (min-width: 620px) {
+  html {
+    font-size: 62%;
+  }
+  main {
+    padding: 0 3em;
+  }
+  .navBar {
+    width: calc(100% - 6em);
+  }
+  .navBar .logo img {
+    height: 6em;
+  }
+  .navBar .menu {
+    width: 90%;
+    height: auto;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 9;
+    grid-column: 4/13;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    background: none;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 9;
+    grid-column: 4 / 13;
+    position: initial;
+    padding: 0;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  .navBar .menu .navLinks {
+    width: 93%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .navBar .menu .navLinks a {
+    font-size: var(--font2);
+    color: var(--color2);
+    padding: 0;
+  }
+  .navBar .navIcon {
+    display: none;
+  }
+  .home {
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+    gap: 0;
+    margin-top: 21em;
+  }
+  .home .img {
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 5;
+    grid-column: 8/13;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .home .context {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-column: 1/8;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  .home p {
+    max-width: 48ch;
+  }
+  .home .buttons {
+    max-width: 38em;
+  }
 }
 /*# sourceMappingURL=index.css.map */

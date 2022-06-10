@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 :root {
-    --color1: white;
+    // --color1: white;
+    --color1: hsl(25.7, 30.4%, 95.5%);
     --color2: hsl(216, 15%, 12.3%);
     --color3: hsl(216, 10%, 43.2%);
     --font1: 2.7em;
@@ -11,6 +12,7 @@
 html {
     font-size: 62.5%;
     font-family: 'Poppins', sans-serif;
+    background-color: var(--color1);
 }
 
 *,
@@ -51,16 +53,23 @@ html {
 
 // main styles
 main {
-    padding: 2em;
+    padding: 0 2em 3em;
     background-color: var(--color1);
     letter-spacing: 3px;
 }
 
 // navBar
 .navBar {
+    position: fixed;
+    width: calc(100% - 4em);
+    top: 0;
+    padding: 2em 0 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    justify-items: end;
     align-items: center;
+    background-color: var(--color1);
+    z-index: 1000;
 
     .logo {
         grid-column: 1/3;
@@ -89,7 +98,7 @@ main {
         .navLinks {
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -137,10 +146,14 @@ main {
 .home {
     display: grid;
     gap: 4em;
-    margin-top: 5em;
+    margin-top: 17em;
 
     .img {
         position: relative;
+
+        img {
+            border-radius: 40%;
+        }
         &::after {
             content: '';
             position: absolute;
@@ -160,13 +173,13 @@ main {
 
     h1 {
         font-size: var(--font1);
-        margin: 0.3em 0;
+        margin: 0.2em 0;
         color: var(--color2);
     }
 
     p {
         font-size: var(--font3);
-        margin-top: 1em;
+        margin-top: 1.2em;
         letter-spacing: 0.2em;
         font-weight: 300;
     }
@@ -175,6 +188,7 @@ main {
         display: flex;
         gap: 2em 1.5em;
         flex-wrap: wrap;
+        margin: 4em 0;
 
         .btn {
             font-size: var(--font2);
@@ -188,6 +202,77 @@ main {
                 color: var(--color1);
                 transition: all ease-in-out 0.2s;
             }
+        }
+    }
+}
+
+// tablet
+@media (min-width: 620px) {
+    html {
+        font-size: 62%;
+    }
+
+    main {
+        padding: 0 3em;
+    }
+
+    .navBar {
+        width: calc(100% - 6em);
+
+        .logo img {
+            height: 6em;
+        }
+
+        .menu {
+            width: 90%;
+            height: auto;
+            grid-column: 4/13;
+            flex-direction: row;
+            background: none;
+            grid-column: 4 / 13;
+            position: initial;
+            padding: 0;
+            justify-content: end;
+
+            .navLinks {
+                width: 93%;
+                flex-direction: row;
+
+                a {
+                    font-size: var(--font2);
+                    color: var(--color2);
+                    padding: 0;
+                }
+            }
+        }
+
+        .navIcon {
+            display: none;
+        }
+    }
+
+    .home {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0;
+        margin-top: 21em;
+
+        .img {
+            grid-column: 8/13;
+            order: 2;
+        }
+
+        .context {
+            grid-column: 1/8;
+            align-self: center;
+            justify-self: end;
+        }
+
+        p {
+            max-width: 48ch;
+        }
+
+        .buttons {
+            max-width: 38em;
         }
     }
 }
