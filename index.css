@@ -6,6 +6,7 @@
   --font1: 2.7em;
   --font2: 2em;
   --font3: 1.7em;
+  --maxWidth: 100em;
 }
 
 html {
@@ -69,7 +70,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: var(--color1);
+  background-color: rgba(247, 243, 240, 0.71);
   z-index: 1000;
 }
 
@@ -116,9 +117,6 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -188,14 +186,8 @@ main {
 
 .home .img img {
   border-radius: 40%;
-}
-
-.home .img::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: red;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .home h3 {
@@ -254,13 +246,10 @@ main {
     padding: 0 3em;
   }
   .navBar {
-    width: calc(100% - 6em);
-  }
-  .navBar .logo img {
-    height: 6em;
+    width: Min(calc(100% - 6em), calc(var(--maxWidth) - 6em));
   }
   .navBar .menu {
-    width: 90%;
+    width: auto;
     height: auto;
     -ms-grid-column: 4;
     -ms-grid-column-span: 9;
@@ -275,12 +264,9 @@ main {
     grid-column: 4 / 13;
     position: initial;
     padding: 0;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
   }
   .navBar .menu .navLinks {
-    width: 93%;
+    width: 100%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -289,7 +275,7 @@ main {
   .navBar .menu .navLinks a {
     font-size: var(--font2);
     color: var(--color2);
-    padding: 0;
+    padding: 0 0 0 1.5em;
   }
   .navBar .navIcon {
     display: none;
@@ -323,6 +309,35 @@ main {
   }
   .home .buttons {
     max-width: 38em;
+  }
+}
+
+@media (min-width: 950px) {
+  html {
+    font-size: 68.75%;
+  }
+  main {
+    max-width: var(--maxWidth);
+    margin: auto;
+  }
+  .navBar .logo img {
+    height: 6em;
+  }
+  .navBar .menu .navLinks a {
+    padding-left: 2.5em;
+  }
+  .home {
+    margin-top: 15em;
+  }
+  .home .img {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 6;
+    grid-column: 7/13;
+  }
+  .home .context {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
   }
 }
 /*# sourceMappingURL=index.css.map */

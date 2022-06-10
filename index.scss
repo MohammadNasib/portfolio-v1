@@ -7,6 +7,7 @@
     --font1: 2.7em;
     --font2: 2em;
     --font3: 1.7em;
+    --maxWidth: 100em;
 }
 
 html {
@@ -68,7 +69,7 @@ main {
     grid-template-columns: repeat(12, 1fr);
     justify-items: end;
     align-items: center;
-    background-color: var(--color1);
+    background-color: hsla(25.7, 30.4%, 95.5%, 0.71);
     z-index: 1000;
 
     .logo {
@@ -98,7 +99,6 @@ main {
         .navLinks {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: center;
         }
 
@@ -153,13 +153,7 @@ main {
 
         img {
             border-radius: 40%;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: red;
+            transition: all 0.3s ease-in-out;
         }
     }
 
@@ -217,14 +211,10 @@ main {
     }
 
     .navBar {
-        width: calc(100% - 6em);
-
-        .logo img {
-            height: 6em;
-        }
+        width: Min(calc(100% - 6em), calc(var(--maxWidth) - 6em));
 
         .menu {
-            width: 90%;
+            width: auto;
             height: auto;
             grid-column: 4/13;
             flex-direction: row;
@@ -232,16 +222,15 @@ main {
             grid-column: 4 / 13;
             position: initial;
             padding: 0;
-            justify-content: end;
 
             .navLinks {
-                width: 93%;
+                width: 100%;
                 flex-direction: row;
 
                 a {
                     font-size: var(--font2);
                     color: var(--color2);
-                    padding: 0;
+                    padding: 0 0 0 1.5em;
                 }
             }
         }
@@ -273,6 +262,39 @@ main {
 
         .buttons {
             max-width: 38em;
+        }
+    }
+}
+
+@media (min-width: 950px) {
+    html {
+        font-size: 68.75%;
+    }
+
+    main {
+        max-width: var(--maxWidth);
+        margin: auto;
+    }
+
+    .navBar {
+        .logo img {
+            height: 6em;
+        }
+
+        .menu .navLinks a {
+            padding-left: 2.5em;
+        }
+    }
+
+    .home {
+        margin-top: 15em;
+
+        .img {
+            grid-column: 7/13;
+        }
+
+        .context {
+            grid-column: 1/7;
         }
     }
 }
