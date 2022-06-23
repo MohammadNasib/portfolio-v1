@@ -1,18 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 :root {
-  --color1: hsl(25.7, 30.4%, 95.5%);
-  --color2: hsl(216, 15%, 12.3%);
-  --color3: hsl(216, 10%, 43.2%);
-  --font1: 2.7em;
+  --color1: hsl(26, 30%, 95%);
+  --color2: rgb(2, 6, 10);
+  --color3: #0490c8;
+  --color4: #1fa3d4;
+  --font1: 3em;
   --font2: 2em;
   --font3: 1.7em;
+  --font1: calc(4vw + 1em);
+  --font2: calc(2vw + 1em);
+  --font3: calc(1.7vw + 0.8em);
   --maxWidth: 100em;
 }
 
 html {
+  scroll-behavior: smooth;
   font-size: 62.5%;
   font-family: 'Poppins', sans-serif;
   background-color: var(--color1);
+}
+
+@media (min-width: 620px) {
+  html {
+    font-size: 62%;
+  }
+}
+
+@media (min-width: 950px) {
+  html {
+    font-size: 75%;
+  }
 }
 
 *,
@@ -52,6 +69,9 @@ html {
 }
 
 main {
+  display: -ms-grid;
+  display: grid;
+  gap: 7em;
   padding: 0 2em 3em;
   background-color: var(--color1);
   letter-spacing: 3px;
@@ -185,16 +205,18 @@ main {
 }
 
 .home .img img {
+  -webkit-filter: drop-shadow(3px 3px 3px #636380);
+          filter: drop-shadow(3px 3px 3px #636380);
   border-radius: 40%;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .home h3 {
-  font-size: var(--font2);
+  font-size: var(--font3);
   letter-spacing: 0.3em;
   letter-spacing: 7px;
-  color: var(--color3);
+  opacity: 0.65;
   font-weight: 400;
 }
 
@@ -202,6 +224,7 @@ main {
   font-size: var(--font1);
   margin: 0.2em 0;
   color: var(--color2);
+  font-weight: 500;
 }
 
 .home p {
@@ -219,12 +242,13 @@ main {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 4em 0;
+  color: var(--color2);
 }
 
 .home .buttons .btn {
   font-size: var(--font2);
   background-color: var(--color1);
-  border: 1px solid var(--color2);
+  border: 1px solid;
   padding: 0.8em 1em;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -238,10 +262,56 @@ main {
   transition: all ease-in-out 0.2s;
 }
 
+.project h1 {
+  font-size: var(--font1);
+  margin-bottom: 1.5em;
+}
+
+.project .projectBox {
+  padding: 2em;
+  -webkit-box-shadow: 1px 1px 7px #cccccc, -1px -1px 7px #cccccc;
+          box-shadow: 1px 1px 7px #cccccc, -1px -1px 7px #cccccc;
+}
+
+.project .projectTitle {
+  font-size: var(--font2);
+  font-weight: 500;
+}
+
+.project .projectImg {
+  margin-bottom: 4em;
+}
+
+.project .projectImg img {
+  -webkit-filter: drop-shadow(3px 3px 4px #5b5353);
+          filter: drop-shadow(3px 3px 4px #5b5353);
+  width: 100%;
+}
+
+.project .projectContext {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5em;
+}
+
+.project .projectContext .description {
+  font-size: var(--font3);
+  font-weight: 300;
+}
+
+.project .projectContext .title {
+  font-size: var(--font3);
+  font-weight: 500;
+}
+
+.project .projectContext .tech,
+.project .projectContext .link,
+.project .projectContext a {
+  font-size: var(--font3);
+  font-weight: 300;
+}
+
 @media (min-width: 620px) {
-  html {
-    font-size: 62%;
-  }
   main {
     padding: 0 3em;
   }
@@ -313,9 +383,6 @@ main {
 }
 
 @media (min-width: 950px) {
-  html {
-    font-size: 68.75%;
-  }
   main {
     max-width: var(--maxWidth);
     margin: auto;
