@@ -1,60 +1,68 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>NAEEMUL ABRAR NASIB's Portfolio</title>
-        <link rel="stylesheet" href="index.css" />
-    </head>
-    <body>
-        <main>
-            <nav class="navBar">
-                <a class="logo" href="#">
-                    <img class="pointer" src="./imges/logo-2.svg" alt="NA" />
-                </a>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAEEMUL ABRAR NASIB's Portfolio</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <main>
+        <nav class="navBar">
+            <a class="logo" href="#">
+                <img class="pointer" src="./imges/logo-2.svg" alt="NA" />
+            </a>
 
-                <div class="menu" data-menu="menu">
-                    <div class="navLinks">
-                        <a href="#home">Home</a>
-                        <a href="#project">Projects</a>
-                        <a href="#">About</a>
-                        <a href="#">Contact</a>
-                    </div>
+            <div class="menu" data-menu="menu">
+                <div class="navLinks">
+                    <a href="#home">Home</a>
+                    <a href="#project">Projects</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+
+            <div class="navIcon pointer" data-navIcon="navIcon">
+                <div class="top"></div>
+                <div class="bottom"></div>
+            </div>
+        </nav>
+
+        <section class="home" id="home">
+            <div class="img">
+                <img
+                    href="#home"
+                    src="./imges/crop-bg-color-hd-2.png"
+                    alt="NASIB'B IMAGE"
+                    width="100%"
+                />
+            </div>
+            <div class="context">
+                <div class="texts">
+                    <h1>MOHAMMAD NASIB</h1>
+                    <h3>FRONT-END DEVELOPER</h3>
+                    <p>
+                        A tech ENTHUSIAST with a passion of learning new TECHNOLOGIES. Now looking
+                        for an opportunity to utilize his skills and learn from real world problems.
+                    </p>
                 </div>
 
-                <div class="navIcon pointer" data-navIcon="navIcon">
-                    <div class="top"></div>
-                    <div class="bottom"></div>
+                <div class="buttons">
+                    <button class="btn pointer">
+                        <a href="#project">My Projects</a>
+                    </button>
+
+                    <button class="btn pointer">
+                        <a href="#">More About Me</a>
+                    </button>
                 </div>
-            </nav>
+            </div>
+        </section>
 
-            <section class="home" id="home">
-                <div class="img">
-                    <img src="./imges/crop-bg-color-hd-2.png" alt="NASIB'B IMAGE" width="100%" />
-                </div>
-                <div class="context">
-                    <div class="texts">
-                        <h1>MOHAMMAD NASIB</h1>
-                        <h3>FRONT-END DEVELOPER</h3>
-                        <p>
-                            A tech ENTHUSIAST with a passion of learning new TECHNOLOGIES. Now
-                            looking for an opportunity to utilize his skills and learn from real
-                            world problems.
-                        </p>
-                    </div>
-
-                    <div class="buttons">
-                        <button class="btn pointer">My Works</button>
-
-                        <button class="btn pointer">More About Me</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="project" id="project">
-                <h1>PROJECTS</h1>
-
-                <div class="projectBox">
+        <section class="project" id="project">
+            <h1>PROJECTS</h1>
+            <div class="projectContainer">
+                <article class="projectBox">
                     <div class="projectImg">
                         <img src="./imges/space-pc.png" alt="SPACE-TOUR-PROJECT" />
                     </div>
@@ -62,23 +70,89 @@
                         <h2 class="projectTitle">SINGLE PAGE APPLICATION</h2>
 
                         <p class="description">
-                            A Single Page Application built with <strong>REACT JS</strong> and
-                            <strong>SASS</strong> from where anyone can choose there destination and
-                            start SPACE-JOURNEY.
+                            A Single Page Application builtwith <strong>REACT JS</strong> and
+                            <strong>SASS</strong>. By using it you can choose your destination and
+                            start your first SPACE-JOURNEY.
                         </p>
 
-                        <div class="links">
-                            <span class="title">LINK:</span>
-                            <span class="link"> Have a look at </span>
-                            <a href="https://space-tour-2022.netlify.app" target="_blank"
-                                >SPACE TOUR</a
-                            >
-                        </div>
+                        <form
+                            class="form"
+                            action="https://space-tour-2022.netlify.app"
+                            target="blank"
+                        >
+                            <button class="btn pointer">Let's Have a Look</button>
+                        </form>
                     </div>
-                </div>
-            </section>
-        </main>
+                </article>
 
-        <script src="scripts.js"></script>
-    </body>
-</html>
+                <article class="projectBox">
+                    <div class="projectImg">
+                        <img src="./imges/crud-pc.png" alt="CRUD APP" />
+                    </div>
+                    <div class="projectContext">
+                        <h2 class="projectTitle">CRUD APPLICATION</h2>
+
+                        <p class="description">
+                            A multifeatured TODO APP builtwith <strong>REACT JS</strong> and
+                            <strong>SASS</strong> where you can write , filter and delete your tasks
+                            .
+                        </p>
+
+                        <form
+                            class="form"
+                            action="https://todoapp-2022.netlify.app/"
+                            target="blank"
+                        >
+                            <button class="btn pointer">Let's Have a Look</button>
+                        </form>
+                    </div>
+                </article>
+
+                <article class="projectBox">
+                    <div class="projectImg">
+                        <img src="./imges/blogr.png" alt="BLOGR NASIB" />
+                    </div>
+                    <div class="projectContext">
+                        <h2 class="projectTitle">BLOGR LANDING PAGE</h2>
+
+                        <p class="description">
+                            An elegant landing page builtwith
+                            <strong>HTML</strong>,<strong> SASS</strong> and
+                            <strong>JAVASCRIPT</strong> with mobile-first approach.
+                        </p>
+
+                        <form class="form" action="https://blogrnasib.netlify.app/" target="blank">
+                            <button class="btn pointer">Let's Have a Look</button>
+                        </form>
+                    </div>
+                </article>
+
+                <article class="projectBox">
+                    <div class="projectImg">
+                        <img src="./imges/project-quiz.png" alt="QUIZ APP" />
+                    </div>
+                    <div class="projectContext">
+                        <h2 class="projectTitle">QUIZ APPLICATION</h2>
+
+                        <p class="description">
+                            This is a multifunctional application builtwith
+                            <strong>REACT JS </strong>,<strong> SASS</strong> and
+                            <strong>FIREBASE</strong> where you can test your programming knowledge
+                            with some tests.
+                        </p>
+
+                        <form
+                            class="form"
+                            action="https://project-quiz-2022.netlify.app/"
+                            target="blank"
+                        >
+                            <button class="btn pointer">Let's Have a Look</button>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>

@@ -4,13 +4,11 @@
   --color2: rgb(2, 6, 10);
   --color3: #0490c8;
   --color4: #1fa3d4;
-  --font1: 3em;
-  --font2: 2em;
-  --font3: 1.7em;
-  --font1: calc(4vw + 1em);
-  --font2: calc(2vw + 1em);
-  --font3: calc(1.7vw + 0.8em);
   --maxWidth: 100em;
+  --font1: clamp(2.75em, 4vw + 1em, 4rem);
+  --font2: clamp(2em, 2.2vw + 1em, 3rem);
+  --font3: clamp(1.57em, 1.7vw + 1em, 2.2rem);
+  --font4: calc(1.3vw + 1em);
 }
 
 html {
@@ -20,7 +18,13 @@ html {
   background-color: var(--color1);
 }
 
-@media (min-width: 620px) {
+@media (min-width: 662px) {
+  :root {
+    --font1: 3em;
+    --font2: 2em;
+    --font3: 1.7em;
+    --font4: 1.58em;
+  }
   html {
     font-size: 62%;
   }
@@ -28,7 +32,7 @@ html {
 
 @media (min-width: 950px) {
   html {
-    font-size: 75%;
+    font-size: 78%;
   }
 }
 
@@ -43,6 +47,37 @@ html {
 
 .pointer {
   cursor: pointer;
+}
+
+.btn {
+  font-size: var(--font2);
+  background-color: var(--color1);
+  border: 1px solid;
+  padding: 0.8em 1em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
+}
+
+.btn a {
+  text-decoration: none;
+  color: var(--color2);
+}
+
+.btn:hover {
+  background-color: var(--color2);
+  color: var(--color1);
+}
+
+.btn:hover a {
+  color: var(--color1);
+}
+
+strong {
+  font-weight: 500;
+  font-size: 1.2em;
 }
 
 .right {
@@ -71,7 +106,7 @@ html {
 main {
   display: -ms-grid;
   display: grid;
-  gap: 7em;
+  gap: 8em;
   padding: 0 2em 3em;
   background-color: var(--color1);
   letter-spacing: 3px;
@@ -213,11 +248,10 @@ main {
 }
 
 .home h3 {
-  font-size: var(--font3);
-  letter-spacing: 0.3em;
-  letter-spacing: 7px;
+  font-size: var(--font4);
+  letter-spacing: 0.45em;
   opacity: 0.65;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .home h1 {
@@ -225,11 +259,12 @@ main {
   margin: 0.2em 0;
   color: var(--color2);
   font-weight: 500;
+  letter-spacing: 0.147em;
 }
 
 .home p {
   font-size: var(--font3);
-  margin-top: 1.2em;
+  margin-top: 2em;
   letter-spacing: 0.2em;
   font-weight: 300;
 }
@@ -241,77 +276,69 @@ main {
   gap: 2em 1.5em;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 4em 0;
+  margin-top: 3.5em;
   color: var(--color2);
-}
-
-.home .buttons .btn {
-  font-size: var(--font2);
-  background-color: var(--color1);
-  border: 1px solid;
-  padding: 0.8em 1em;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-.home .buttons .btn:hover {
-  background-color: var(--color2);
-  color: var(--color1);
-  -webkit-transition: all ease-in-out 0.2s;
-  transition: all ease-in-out 0.2s;
 }
 
 .project h1 {
   font-size: var(--font1);
-  margin-bottom: 1.5em;
+  margin-bottom: 1.3em;
 }
 
-.project .projectBox {
+.project .projectContainer {
+  display: -ms-grid;
+  display: grid;
+  gap: 5em;
+}
+
+.project .projectContainer .projectBox {
   padding: 2em;
   -webkit-box-shadow: 1px 1px 7px #cccccc, -1px -1px 7px #cccccc;
           box-shadow: 1px 1px 7px #cccccc, -1px -1px 7px #cccccc;
 }
 
-.project .projectTitle {
-  font-size: var(--font2);
-  font-weight: 500;
-}
-
-.project .projectImg {
+.project .projectContainer .projectImg {
   margin-bottom: 4em;
 }
 
-.project .projectImg img {
+.project .projectContainer .projectImg img {
   -webkit-filter: drop-shadow(3px 3px 4px #5b5353);
           filter: drop-shadow(3px 3px 4px #5b5353);
   width: 100%;
 }
 
-.project .projectContext {
+.project .projectContainer .projectTitle {
+  font-size: var(--font2);
+  font-weight: 500;
+}
+
+.project .projectContainer .projectContext {
   display: -ms-grid;
   display: grid;
-  gap: 1.5em;
+  gap: 2.1em;
 }
 
-.project .projectContext .description {
-  font-size: var(--font3);
-  font-weight: 300;
-}
-
-.project .projectContext .title {
+.project .projectContainer .projectContext .title {
   font-size: var(--font3);
   font-weight: 500;
 }
 
-.project .projectContext .tech,
-.project .projectContext .link,
-.project .projectContext a {
+.project .projectContainer .projectContext .description {
   font-size: var(--font3);
   font-weight: 300;
 }
 
-@media (min-width: 620px) {
+.project .projectContainer .projectContext .btn {
+  margin-top: 0.5em;
+}
+
+.project .projectContainer .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 662px) {
   main {
     padding: 0 3em;
   }
@@ -371,14 +398,15 @@ main {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-    -ms-grid-column-align: end;
-        justify-self: end;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   .home p {
-    max-width: 48ch;
+    max-width: 40ch;
   }
   .home .buttons {
     max-width: 38em;
+    margin-top: 2.5em;
   }
 }
 
@@ -386,9 +414,6 @@ main {
   main {
     max-width: var(--maxWidth);
     margin: auto;
-  }
-  .navBar .logo img {
-    height: 6em;
   }
   .navBar .menu .navLinks a {
     padding-left: 2.5em;

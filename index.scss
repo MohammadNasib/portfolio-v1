@@ -5,13 +5,11 @@
     --color2: rgb(2, 6, 10);
     --color3: #0490c8;
     --color4: #1fa3d4;
-    --font1: 3em;
-    --font2: 2em;
-    --font3: 1.7em;
-    --font1: calc(4vw + 1em);
-    --font2: calc(2vw + 1em);
-    --font3: calc(1.7vw + 0.8em);
     --maxWidth: 100em;
+    --font1: clamp(2.75em, 4vw + 1em, 4rem);
+    --font2: clamp(2em, 2.2vw + 1em, 3rem);
+    --font3: clamp(1.57em, 1.7vw + 1em, 2.2rem);
+    --font4: calc(1.3vw + 1em);
 }
 
 html {
@@ -21,14 +19,21 @@ html {
     background-color: var(--color1);
 }
 
-@media (min-width: 620px) {
+@media (min-width: 662px) {
+    :root {
+        --font1: 3em;
+        --font2: 2em;
+        --font3: 1.7em;
+        --font4: 1.58em;
+    }
+
     html {
         font-size: 62%;
     }
 }
 @media (min-width: 950px) {
     html {
-        font-size: 75%;
+        font-size: 78%;
     }
 }
 
@@ -44,6 +49,34 @@ html {
 // global
 .pointer {
     cursor: pointer;
+}
+
+.btn {
+    font-size: var(--font2);
+    background-color: var(--color1);
+    border: 1px solid;
+    padding: 0.8em 1em;
+    flex-grow: 1;
+    transition: all ease-in-out 0.2s;
+
+    a {
+        text-decoration: none;
+        color: var(--color2);
+    }
+
+    &:hover {
+        background-color: var(--color2);
+        color: var(--color1);
+
+        a {
+            color: var(--color1);
+        }
+    }
+}
+
+strong {
+    font-weight: 500;
+    font-size: 1.2em;
 }
 
 // used in js
@@ -71,7 +104,7 @@ html {
 // main styles
 main {
     display: grid;
-    gap: 7em;
+    gap: 8em;
     padding: 0 2em 3em;
     background-color: var(--color1);
     letter-spacing: 3px;
@@ -177,11 +210,10 @@ main {
     }
 
     h3 {
-        font-size: var(--font3);
-        letter-spacing: 0.3em;
-        letter-spacing: 7px;
+        font-size: var(--font4);
+        letter-spacing: 0.45em;
         opacity: 0.65;
-        font-weight: 400;
+        font-weight: 500;
     }
 
     h1 {
@@ -189,11 +221,12 @@ main {
         margin: 0.2em 0;
         color: var(--color2);
         font-weight: 500;
+        letter-spacing: 0.147em;
     }
 
     p {
         font-size: var(--font3);
-        margin-top: 1.2em;
+        margin-top: 2em;
         letter-spacing: 0.2em;
         font-weight: 300;
     }
@@ -202,22 +235,8 @@ main {
         display: flex;
         gap: 2em 1.5em;
         flex-wrap: wrap;
-        margin: 4em 0;
+        margin-top: 3.5em;
         color: var(--color2);
-
-        .btn {
-            font-size: var(--font2);
-            background-color: var(--color1);
-            border: 1px solid;
-            padding: 0.8em 1em;
-            flex-grow: 1;
-
-            &:hover {
-                background-color: var(--color2);
-                color: var(--color1);
-                transition: all ease-in-out 0.2s;
-            }
-        }
     }
 }
 
@@ -225,53 +244,59 @@ main {
 .project {
     h1 {
         font-size: var(--font1);
-        margin-bottom: 1.5em;
+        margin-bottom: 1.3em;
     }
 
-    .projectBox {
-        padding: 2em;
-        box-shadow: 1px 1px 7px hsl(0, 0%, 80%), -1px -1px 7px hsl(0, 0%, 80%);
-    }
-
-    .projectTitle {
-        font-size: var(--font2);
-        font-weight: 500;
-    }
-
-    .projectImg {
-        margin-bottom: 4em;
-
-        img {
-            filter: drop-shadow(3px 3px 4px hsl(0, 4.6%, 34.1%));
-            width: 100%;
-        }
-    }
-
-    .projectContext {
+    .projectContainer {
         display: grid;
-        gap: 1.5em;
+        gap: 5em;
 
-        .description {
-            font-size: var(--font3);
-            font-weight: 300;
+        .projectBox {
+            padding: 2em;
+            box-shadow: 1px 1px 7px hsl(0, 0%, 80%), -1px -1px 7px hsl(0, 0%, 80%);
         }
 
-        .title {
-            font-size: var(--font3);
+        .projectImg {
+            margin-bottom: 4em;
+
+            img {
+                filter: drop-shadow(3px 3px 4px hsl(0, 4.6%, 34.1%));
+                width: 100%;
+            }
+        }
+
+        .projectTitle {
+            font-size: var(--font2);
             font-weight: 500;
         }
 
-        .tech,
-        .link,
-        a {
-            font-size: var(--font3);
-            font-weight: 300;
+        .projectContext {
+            display: grid;
+            gap: 2.1em;
+
+            .title {
+                font-size: var(--font3);
+                font-weight: 500;
+            }
+
+            .description {
+                font-size: var(--font3);
+                font-weight: 300;
+            }
+
+            .btn {
+                margin-top: 0.5em;
+            }
+        }
+
+        .form {
+            display: flex;
         }
     }
 }
 
 // tablet
-@media (min-width: 620px) {
+@media (min-width: 662px) {
     main {
         padding: 0 3em;
     }
@@ -319,15 +344,16 @@ main {
         .context {
             grid-column: 1/8;
             align-self: center;
-            justify-self: end;
+            justify-self: center;
         }
 
         p {
-            max-width: 48ch;
+            max-width: 40ch;
         }
 
         .buttons {
             max-width: 38em;
+            margin-top: 2.5em;
         }
     }
 }
@@ -339,10 +365,6 @@ main {
     }
 
     .navBar {
-        .logo img {
-            height: 6em;
-        }
-
         .menu .navLinks a {
             padding-left: 2.5em;
         }
