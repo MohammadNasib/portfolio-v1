@@ -2,7 +2,7 @@
 :root {
     // --color1: white;
     --color1: hsl(26, 30%, 95%);
-    --color2: rgb(2, 6, 10);
+    --color2: hsl(211.6, 57.6%, 6.5%);
     --color3: #0490c8;
     --color4: #1fa3d4;
     --maxWidth: 100em;
@@ -75,8 +75,8 @@ html {
 }
 
 strong {
-    font-weight: 500;
-    font-size: 1.2em;
+    font-weight: 400;
+    font-size: var(--font3);
 }
 
 // used in js
@@ -249,48 +249,52 @@ main {
 
     .projectContainer {
         display: grid;
-        gap: 5em;
+        justify-items: center;
+        gap: 2em;
 
         .projectBox {
-            padding: 2em;
-            box-shadow: 1px 1px 7px hsl(0, 0%, 80%), -1px -1px 7px hsl(0, 0%, 80%);
-        }
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            height: 40vh;
+            max-width: 45em;
 
-        .projectImg {
-            margin-bottom: 4em;
+            &:hover {
+                .fa {
+                    transform: translate(13px, 1px) !important ;
+                }
+            }
 
-            img {
-                filter: drop-shadow(3px 3px 4px hsl(0, 4.6%, 34.1%));
+            .projectBg {
                 width: 100%;
-            }
-        }
-
-        .projectTitle {
-            font-size: var(--font2);
-            font-weight: 500;
-        }
-
-        .projectContext {
-            display: grid;
-            gap: 2.1em;
-
-            .title {
-                font-size: var(--font3);
-                font-weight: 500;
+                height: 100%;
+                background-size: cover;
+                background-position: center center;
+                border-radius: 0.3em;
             }
 
-            .description {
-                font-size: var(--font3);
-                font-weight: 300;
-            }
+            .projectInfo {
+                position: absolute;
+                bottom: 10%;
+                color: white;
+                margin-left: 2.3em;
 
-            .btn {
-                margin-top: 0.5em;
-            }
-        }
+                h2 {
+                    font-size: var(--font3);
+                    font-weight: 500;
+                }
 
-        .form {
-            display: flex;
+                .button {
+                    margin-top: 1.5em;
+                    font-size: calc(var(--font3) - 0.5em);
+                    font-weight: 400;
+
+                    .fa {
+                        transform: translate(5px, 1px);
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+            }
         }
     }
 }

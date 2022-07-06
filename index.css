@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 :root {
   --color1: hsl(26, 30%, 95%);
-  --color2: rgb(2, 6, 10);
+  --color2: hsl(211.6, 57.6%, 6.5%);
   --color3: #0490c8;
   --color4: #1fa3d4;
   --maxWidth: 100em;
@@ -76,8 +76,8 @@ html {
 }
 
 strong {
-  font-weight: 500;
-  font-size: 1.2em;
+  font-weight: 400;
+  font-size: var(--font3);
 }
 
 .right {
@@ -288,54 +288,54 @@ main {
 .project .projectContainer {
   display: -ms-grid;
   display: grid;
-  gap: 5em;
+  justify-items: center;
+  gap: 2em;
 }
 
 .project .projectContainer .projectBox {
-  padding: 2em;
-  -webkit-box-shadow: 1px 1px 7px #cccccc, -1px -1px 7px #cccccc;
-          box-shadow: 1px 1px 7px #cccccc, -1px -1px 7px #cccccc;
-}
-
-.project .projectContainer .projectImg {
-  margin-bottom: 4em;
-}
-
-.project .projectContainer .projectImg img {
-  -webkit-filter: drop-shadow(3px 3px 4px #5b5353);
-          filter: drop-shadow(3px 3px 4px #5b5353);
+  display: inline-block;
+  position: relative;
   width: 100%;
+  height: 40vh;
+  max-width: 45em;
 }
 
-.project .projectContainer .projectTitle {
-  font-size: var(--font2);
-  font-weight: 500;
+.project .projectContainer .projectBox:hover .fa {
+  -webkit-transform: translate(13px, 1px) !important;
+          transform: translate(13px, 1px) !important;
 }
 
-.project .projectContainer .projectContext {
-  display: -ms-grid;
-  display: grid;
-  gap: 2.1em;
+.project .projectContainer .projectBox .projectBg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 0.3em;
 }
 
-.project .projectContainer .projectContext .title {
+.project .projectContainer .projectBox .projectInfo {
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  margin-left: 2.3em;
+}
+
+.project .projectContainer .projectBox .projectInfo h2 {
   font-size: var(--font3);
   font-weight: 500;
 }
 
-.project .projectContainer .projectContext .description {
-  font-size: var(--font3);
-  font-weight: 300;
+.project .projectContainer .projectBox .projectInfo .button {
+  margin-top: 1.5em;
+  font-size: calc(var(--font3) - 0.5em);
+  font-weight: 400;
 }
 
-.project .projectContainer .projectContext .btn {
-  margin-top: 0.5em;
-}
-
-.project .projectContainer .form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.project .projectContainer .projectBox .projectInfo .button .fa {
+  -webkit-transform: translate(5px, 1px);
+          transform: translate(5px, 1px);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 662px) {
