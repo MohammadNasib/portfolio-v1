@@ -470,36 +470,4 @@ main {
     gap: 1em;
   }
 }
-
-@media (hover: hover) {
-  .projectBox {
-    overflow: hidden;
-  }
-  .projectBox:hover .projectInfo {
-    background-color: rgba(0, 0, 0, 0.4) !important;
-  }
-  .projectBox:hover .projectInfo h2 {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  .projectBox:hover .projectInfo .button {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  .projectInfo {
-    background: none !important;
-  }
-  .projectInfo h2 {
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    -webkit-transform: translateY(1.7em);
-            transform: translateY(1.7em);
-  }
-  .projectInfo .button {
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-transform: translateY(5em);
-            transform: translateY(5em);
-  }
-}
 /*# sourceMappingURL=index.css.map */

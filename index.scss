@@ -425,34 +425,34 @@ main {
 }
 
 // hover stuff for desktop
-@media (hover: hover) {
-    .projectBox {
-        overflow: hidden;
+// @media (hover: hover) {
+//     .projectBox {
+//         overflow: hidden;
 
-        &:hover .projectInfo {
-            background-color: hsla(0, 0%, 0%, 0.4) !important;
+//         &:hover .projectInfo {
+//             background-color: hsla(0, 0%, 0%, 0.4) !important;
 
-            h2 {
-                transform: translateY(0);
-            }
+//             h2 {
+//                 transform: translateY(0);
+//             }
 
-            .button {
-                transform: translateY(0);
-            }
-        }
-    }
+//             .button {
+//                 transform: translateY(0);
+//             }
+//         }
+//     }
 
-    .projectInfo {
-        background: none !important;
+//     .projectInfo {
+//         background: none !important;
 
-        h2 {
-            transition: all 0.3s ease-in-out;
-            transform: translateY(1.7em);
-        }
+//         h2 {
+//             transition: all 0.3s ease-in-out;
+//             transform: translateY(1.7em);
+//         }
 
-        .button {
-            transition: all 0.5s ease-in-out;
-            transform: translateY(5em);
-        }
-    }
-}
+//         .button {
+//             transition: all 0.5s ease-in-out;
+//             transform: translateY(5em);
+//         }
+//     }
+// }
