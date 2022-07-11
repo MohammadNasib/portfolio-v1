@@ -425,7 +425,7 @@ main {
 }
 
 // hover stuff for desktop
-@media (hover: hover) {
+@media (hover: none) {
     .projectBox {
         overflow: hidden;
 

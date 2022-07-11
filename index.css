@@ -471,7 +471,7 @@ main {
   }
 }
 
-@media (hover: hover) {
+@media (hover: none) {
   .projectBox {
     overflow: hidden;
   }
