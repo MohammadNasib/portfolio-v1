@@ -263,15 +263,25 @@ main {
             background-size: cover;
             background-position: center;
             border-radius: 0.7em;
+            overflow: hidden;
 
             &:hover {
                 .fa {
                     transform: translate(13px, 1px) !important ;
                 }
+
+                .projectInfo {
+                    background-color: hsla(0, 0%, 0%, 0.4) !important;
+                }
+
+                h2,
+                .button {
+                    transform: translateY(0) !important;
+                }
             }
 
             .projectInfo {
-                background-color: hsla(0, 0%, 0%, 0.4);
+                background: none;
                 cursor: pointer;
                 padding: 15em 0 3em 2.5em;
                 color: white;
@@ -286,11 +296,15 @@ main {
                 h2 {
                     font-size: var(--font2);
                     font-weight: 500;
+                    transition: all 0.3s ease-in-out;
+                    transform: translateY(1.7em);
                 }
 
                 .button {
                     font-size: calc(var(--font3) - 0.4em);
                     font-weight: 400;
+                    transition: all 0.5s ease-in-out;
+                    transform: translateY(5em);
 
                     .fa {
                         transform: translate(5px, 1px);
@@ -425,13 +439,12 @@ main {
 }
 
 //hover stuff for desktop
-@media (hover) {
+
+@media (hover: none) {
     .project {
         .projectContainer {
             .projectBox {
-                overflow: hidden;
-
-                &:hover .projectInfo {
+                .projectInfo {
                     background-color: hsla(0, 0%, 0%, 0.4) !important;
 
                     h2,
@@ -439,21 +452,40 @@ main {
                         transform: translateY(0);
                     }
                 }
-
-                .projectInfo {
-                    background: none !important;
-
-                    h2 {
-                        transition: all 0.3s ease-in-out;
-                        transform: translateY(1.7em);
-                    }
-
-                    .button {
-                        transition: all 0.5s ease-in-out;
-                        transform: translateY(5em);
-                    }
-                }
             }
         }
     }
 }
+
+// @media (hover:hover) {
+//     .project {
+//         .projectContainer {
+//             .projectBox {
+//                 overflow: hidden;
+
+//                 &:hover .projectInfo {
+//                     background-color: hsla(0, 0%, 0%, 0.4) !important;
+
+//                     h2,
+//                     .button {
+//                         transform: translateY(0);
+//                     }
+//                 }
+
+//                 .projectInfo {
+//                     background: none !important;
+
+//                     h2 {
+//                         transition: all 0.3s ease-in-out;
+//                         transform: translateY(1.7em);
+//                     }
+
+//                     .button {
+//                         transition: all 0.5s ease-in-out;
+//                         transform: translateY(5em);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
