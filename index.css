@@ -89,29 +89,6 @@ strong {
   transform: rotate(45deg) translate(-6px, -10px);
 }
 
-@media (hover: hover) {
-  .project .projectContainer .projectBox {
-    overflow: hidden;
-  }
-  .project .projectContainer .projectBox:hover .projectInfo {
-    background-color: hsla(0deg, 0%, 0%, 0.4) !important;
-  }
-  .project .projectContainer .projectBox:hover .projectInfo h2,
-.project .projectContainer .projectBox:hover .projectInfo .button {
-    transform: translateY(0);
-  }
-  .project .projectContainer .projectBox .projectInfo {
-    background: none !important;
-  }
-  .project .projectContainer .projectBox .projectInfo h2 {
-    transition: all 0.3s ease-in-out;
-    transform: translateY(1.7em);
-  }
-  .project .projectContainer .projectBox .projectInfo .button {
-    transition: all 0.5s ease-in-out;
-    transform: translateY(5em);
-  }
-}
 main {
   display: grid;
   gap: 8em;
@@ -372,5 +349,28 @@ main {
   .project .projectContainer .projectBox .projectInfo {
     padding: 11em 0 3em 2em;
     gap: 1em;
+  }
+}
+@media (hover) {
+  .project .projectContainer .projectBox {
+    overflow: hidden;
+  }
+  .project .projectContainer .projectBox:hover .projectInfo {
+    background-color: hsla(0deg, 0%, 0%, 0.4) !important;
+  }
+  .project .projectContainer .projectBox:hover .projectInfo h2,
+.project .projectContainer .projectBox:hover .projectInfo .button {
+    transform: translateY(0);
+  }
+  .project .projectContainer .projectBox .projectInfo {
+    background: none !important;
+  }
+  .project .projectContainer .projectBox .projectInfo h2 {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(1.7em);
+  }
+  .project .projectContainer .projectBox .projectInfo .button {
+    transition: all 0.5s ease-in-out;
+    transform: translateY(5em);
   }
 }/*# sourceMappingURL=index.css.map */
