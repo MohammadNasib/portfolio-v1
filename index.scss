@@ -101,6 +101,40 @@ strong {
     }
 }
 
+//hover stuff for desktop
+@media (hover: hover) {
+    .project {
+        .projectContainer {
+            .projectBox {
+                overflow: hidden;
+
+                &:hover .projectInfo {
+                    background-color: hsla(0, 0%, 0%, 0.4) !important;
+
+                    h2,
+                    .button {
+                        transform: translateY(0);
+                    }
+                }
+
+                .projectInfo {
+                    background: none !important;
+
+                    h2 {
+                        transition: all 0.3s ease-in-out;
+                        transform: translateY(1.7em);
+                    }
+
+                    .button {
+                        transition: all 0.5s ease-in-out;
+                        transform: translateY(5em);
+                    }
+                }
+            }
+        }
+    }
+}
+
 // main styles
 main {
     display: grid;
@@ -420,39 +454,6 @@ main {
                     gap: 1em;
                 }
             }
-        }
-    }
-}
-
-// hover stuff for desktop
-@media (hover: none) {
-    .projectBox {
-        overflow: hidden;
-
-        &:hover .projectInfo {
-            background-color: hsla(0, 0%, 0%, 0.4) !important;
-
-            h2 {
-                transform: translateY(0);
-            }
-
-            .button {
-                transform: translateY(0);
-            }
-        }
-    }
-
-    .projectInfo {
-        background: none !important;
-
-        h2 {
-            transition: all 0.3s ease-in-out;
-            transform: translateY(1.7em);
-        }
-
-        .button {
-            transition: all 0.5s ease-in-out;
-            transform: translateY(5em);
         }
     }
 }
