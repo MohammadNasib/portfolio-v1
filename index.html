@@ -12,20 +12,21 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <main>
         <nav class="navBar">
-            <a class="logo" href="#home">
+            <a class="logo" href="#">
                 <img class="pointer" src="./imges/logo-2.svg" alt="NA" />
             </a>
 
             <div class="menu" data-menu="menu">
                 <div class="navLinks">
-                    <a href="#home">Home</a>
-                    <a href="#project">Projects</a>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
+                    <a class="fw-300" href="#">Home</a>
+                    <a class="fw-300" href="#project">Projects</a>
+                    <a class="fw-300" href="#about">About</a>
+                    <a class="fw-300" href="#contact">Contact</a>
                 </div>
             </div>
 
@@ -41,28 +42,31 @@
             </div>
             <div class="context">
                 <div class="texts">
-                    <h1>MOHAMMAD NASIB</h1>
-                    <h3>FRONT-END DEVELOPER</h3>
-                    <p>
-                        A tech ENTHUSIAST with a passion of learning new TECHNOLOGIES. Now looking
-                        for an opportunity to utilize his skills and learn from real world problems.
+                    <h1 class="name fw-500">MOHAMMAD NASIB</h1>
+                    <h3 class="fw-500">FRONT-END DEVELOPER</h3>
+                    <p class="para fw-300">
+                        A self-taught developer who loves to build interactive and elegant websites.
                     </p>
                 </div>
 
                 <div class="buttons">
-                    <button class="btn pointer">
-                        <a href="#project">My Projects</a>
+                    <button
+                        data-name="projects"
+                        class="btn pointer"
+                        onclick="navigateTo('#project')"
+                    >
+                        My Projects
                     </button>
 
-                    <button class="btn pointer">
-                        <a href="#">More About Me</a>
+                    <button class="btn pointer" onclick="navigateTo('#about')">
+                        More About Me
                     </button>
                 </div>
             </div>
         </section>
 
         <section class="project" id="project">
-            <h1>PROJECTS</h1>
+            <h1 class="sectionTitle">Projects</h1>
 
             <div class="projectContainer">
                 <a
@@ -72,9 +76,9 @@
                     style="background-image: url('./imges/ss-crud.PNG')"
                 >
                     <div class="projectInfo">
-                        <h2>CRUD Application</h2>
+                        <h2 class="fw-500">CRUD Application</h2>
 
-                        <div class="button">
+                        <div class="button fw-400">
                             Lets have a look
                             <i class="fa fa-arrow-right"></i>
                         </div>
@@ -88,9 +92,9 @@
                     style="background-image: url('./imges/space.jpg')"
                 >
                     <div class="projectInfo">
-                        <h2>Single Page Application</h2>
+                        <h2 class="fw-500">Single Page Application</h2>
 
-                        <div class="button">
+                        <div class="button fw-400">
                             Lets have a look
                             <i class="fa fa-arrow-right"></i>
                         </div>
@@ -104,9 +108,9 @@
                     style="background-image: url('./imges/blogr.jpg')"
                 >
                     <div class="projectInfo">
-                        <h2>Landing Page</h2>
+                        <h2 class="fw-500">Landing Page</h2>
 
-                        <div class="button">
+                        <div class="button fw-400">
                             Lets have a look
                             <i class="fa fa-arrow-right"></i>
                         </div>
@@ -120,9 +124,9 @@
                     style="background-image: url('./imges/ss-quiz.PNG')"
                 >
                     <div class="projectInfo">
-                        <h2>QUIZ Application</h2>
+                        <h2 class="fw-500">QUIZ Application</h2>
 
-                        <div class="button">
+                        <div class="button fw-400">
                             Lets have a look
                             <i class="fa fa-arrow-right"></i>
                         </div>
@@ -136,9 +140,9 @@
                     style="background-image: url('./imges/ss-huddle.PNG')"
                 >
                     <div class="projectInfo">
-                        <h2>Landing Page</h2>
+                        <h2 class="fw-500">Landing Page</h2>
 
-                        <div class="button">
+                        <div class="button fw-400">
                             Lets have a look
                             <i class="fa fa-arrow-right"></i>
                         </div>
@@ -152,9 +156,9 @@
                     style="background-image: url('./imges/weatherstatus.png')"
                 >
                     <div class="projectInfo">
-                        <h2>Weather Status Application</h2>
+                        <h2 class="fw-500">Weather Status Application</h2>
 
-                        <div class="button">
+                        <div class="button fw-400">
                             Lets have a look
                             <i class="fa fa-arrow-right"></i>
                         </div>
@@ -162,7 +166,36 @@
                 </a>
             </div>
         </section>
-    </main>
 
-    <script src="scripts.js"></script>
+        <section class="about" id="about">
+            <h1 class="sectionTitle">About</h1>
+            <div class="aboutContainer">
+                <div class="info">
+                    <h3 class="fw-500">Hi There , This is</h3>
+                    <h1 class="name fw-500">Mohammad Naeemul Abrar Nasib</h1>
+                    <p class="para fw-300">
+                        I like to call my self a Front-end-developer. Starting in 2021, i've learnt
+                        Basic and Advance topics of Web-development and completed a couple of
+                        projects. Now i'm looking for an opportunity to make myself experienced in
+                        real world projects.
+                    </p>
+                    <a href="#skills"> I'm skilled in ..<i class="fa fa-arrow-right"></i> </a>
+                </div>
+
+                <div class="skills" id="skills">
+                    <span class="fw-500"><i class="fa-brands fa-html5"></i> HTML</span>
+
+                    <span class="fw-500"><i class="fa-brands fa-css3"></i> CSS</span>
+
+                    <span class="fw-500"><i class="fa-brands fa-js"></i> JAVASCRIPT</span>
+
+                    <span class="fw-500"><i class="fa-brands fa-react"></i> REACT</span>
+
+                    <span class="fw-500"><i class="fa-brands fa-sass"></i> SASS</span>
+
+                    <span class="fw-500"><i class="fa-brands fa-python"></i> PYTHON</span>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
