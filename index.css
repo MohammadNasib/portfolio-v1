@@ -91,7 +91,7 @@ html {
 
 .sectionTitle {
   font-size: var(--font1);
-  margin-bottom: 1.5em;
+  margin-bottom: 2.1em;
 }
 
 .name {
@@ -131,8 +131,8 @@ html {
 
 main {
   display: grid;
-  gap: 8em;
-  padding: 0 2em 3em;
+  gap: 11em;
+  padding: 0 2em 10em;
   background-color: var(--color1);
   letter-spacing: 3px;
 }
@@ -272,12 +272,9 @@ main {
   color: var(--color2) !important;
 }
 
-.about {
-  margin-bottom: 5em;
-}
 .about .aboutContainer {
   display: grid;
-  gap: 5%;
+  gap: 8em;
 }
 .about .info h3 {
   font-size: var(--font2);
@@ -308,7 +305,7 @@ main {
   transition: all 0.3s ease-in-out;
 }
 .about .skills:target {
-  box-shadow: 1px 1px 3px var(--color2);
+  box-shadow: 1px 1px 3px hsla(0deg, 0%, 0%, 0.44);
 }
 .about .skills span {
   color: var(--color2);
@@ -322,12 +319,73 @@ main {
   transform: scale(1.1);
 }
 
+.contact .contactContainer {
+  display: grid;
+  gap: 5em;
+}
+.contact .contactInfo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: var(--font1);
+}
+.contact .contactInfo a {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  color: var(--color2);
+}
+.contact .contactInfo a:hover {
+  transform: scale(1.05);
+}
+.contact .contactInfo span {
+  display: none;
+}
+.contact h2 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 1em 0;
+}
+.contact h2 span {
+  background: var(--color1);
+  padding: 0 1em;
+}
+.contact .form input,
+.contact .form textarea {
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.3em;
+  font-size: var(--font3);
+  border: none;
+  margin-bottom: 1em;
+  resize: none;
+  box-shadow: 1px 1px 3px hsla(0deg, 0%, 0%, 0.38);
+}
+.contact .form ::-moz-placeholder {
+  letter-spacing: 0.15em;
+}
+.contact .form :-ms-input-placeholder {
+  letter-spacing: 0.15em;
+}
+.contact .form ::placeholder {
+  letter-spacing: 0.15em;
+}
+.contact .form .btn {
+  padding: 0.7em 2em;
+  margin-top: 1.2em;
+}
+.contact .form .btn:hover .sendIcon, .contact .form .btn:focus .sendIcon {
+  transform: translate(13px, -3px);
+}
+.contact .form .sendIcon {
+  transform: translateX(8px);
+  transition: all 0.3s ease-in-out;
+}
+
 @media (min-width: 662px) {
   .sectionTitle {
     text-align: center;
-  }
-  main {
-    padding: 0 3em;
   }
   .navBar {
     width: min(100% - 6em, var(--maxWidth) - 6em);
@@ -390,6 +448,29 @@ main {
   }
   .about .skills span {
     padding: 0.5em 0;
+  }
+  .contact .contactContainer {
+    grid-template-columns: 50% 45%;
+    gap: 5%;
+  }
+  .contact .contactInfo {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .contact .contactInfo a {
+    margin-top: 1em;
+  }
+  .contact .contactInfo span {
+    display: inline-block;
+    font-size: 0.4em;
+    line-height: 2em;
+  }
+  .contact h2 {
+    display: none;
+  }
+  .contact .form {
+    order: -1;
   }
 }
 @media (min-width: 950px) {

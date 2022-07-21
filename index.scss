@@ -98,7 +98,7 @@ html {
 
 .sectionTitle {
     font-size: var(--font1);
-    margin-bottom: 1.5em;
+    margin-bottom: 2.1em;
 }
 
 .name {
@@ -143,8 +143,8 @@ html {
 // main styles
 main {
     display: grid;
-    gap: 8em;
-    padding: 0 2em 3em;
+    gap: 11em;
+    padding: 0 2em 10em;
     background-color: var(--color1);
     letter-spacing: 3px;
 }
@@ -316,10 +316,9 @@ main {
 
 // ABOUT SECTION
 .about {
-    margin-bottom: 5em;
     .aboutContainer {
         display: grid;
-        gap: 5%;
+        gap: 8em;
     }
 
     .info {
@@ -359,7 +358,7 @@ main {
         transition: all 0.3s ease-in-out;
 
         &:target {
-            box-shadow: 1px 1px 3px var(--color2);
+            box-shadow: 1px 1px 3px hsla(0, 0%, 0%, 0.44);
         }
 
         span {
@@ -377,14 +376,87 @@ main {
     }
 }
 
+// CONTACT SECTION
+.contact {
+    .contactContainer {
+        display: grid;
+        gap: 5em;
+    }
+
+    .contactInfo {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: var(--font1);
+
+        a {
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            color: var(--color2);
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #000;
+        line-height: 0.1em;
+        margin: 1em 0;
+
+        span {
+            background: var(--color1);
+            padding: 0 1em;
+        }
+    }
+
+    .form {
+        input,
+        textarea {
+            width: 100%;
+            padding: 1em;
+            border-radius: 0.3em;
+            font-size: var(--font3);
+            border: none;
+            margin-bottom: 1em;
+            resize: none;
+            box-shadow: 1px 1px 3px hsla(0, 0%, 0%, 0.38);
+        }
+
+        ::placeholder {
+            letter-spacing: 0.15em;
+        }
+
+        .btn {
+            padding: 0.7em 2em;
+            margin-top: 1.2em;
+
+            &:hover,
+            &:focus {
+                .sendIcon {
+                    transform: translate(13px, -3px);
+                }
+            }
+        }
+
+        .sendIcon {
+            transform: translateX(8px);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
 // tablet
 @media (min-width: 662px) {
     .sectionTitle {
         text-align: center;
-    }
-
-    main {
-        padding: 0 3em;
     }
 
     .navBar {
@@ -467,6 +539,37 @@ main {
             span {
                 padding: 0.5em 0;
             }
+        }
+    }
+
+    .contact {
+        .contactContainer {
+            grid-template-columns: 50% 45%;
+            gap: 5%;
+        }
+
+        .contactInfo {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            a {
+                margin-top: 1em;
+            }
+
+            span {
+                display: inline-block;
+                font-size: 0.4em;
+                line-height: 2em;
+            }
+        }
+
+        h2 {
+            display: none;
+        }
+
+        .form {
+            order: -1;
         }
     }
 }
