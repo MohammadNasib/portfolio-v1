@@ -20,9 +20,15 @@
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
-    font-family: 'Poppins', sans-serif;
     background-color: var(--color1);
     scroll-padding-top: var(--scrollPadding, 100px);
+}
+
+html,
+input,
+textarea,
+::placeholder {
+    font-family: 'Poppins', sans-serif;
 }
 
 @media (min-width: 662px) {
@@ -112,10 +118,28 @@ html {
     font-size: var(--font3);
     margin-top: 2em;
     letter-spacing: 0.2em;
+    line-height: 2em;
+
+    a {
+        text-decoration: none;
+        font-weight: 400;
+        color: var(--color2);
+        border-bottom: 1px solid;
+    }
 }
 
 .button {
     font-size: calc(var(--font3) - 0.4em);
+}
+
+.invalidMssg {
+    color: hsl(0, 100%, 49.6%);
+    text-align: center;
+    margin-bottom: 0.3em;
+    font-size: var(--font4);
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-1.5em);
+    opacity: 0;
 }
 
 // used in js
@@ -138,6 +162,10 @@ html {
     .bottom {
         transform: rotate(45deg) translate(-6px, -10px);
     }
+}
+.toggleInvalidMssg {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 // main styles
@@ -243,7 +271,7 @@ main {
         position: relative;
 
         img {
-            filter: drop-shadow(3px 3px 3px hsl(240, 12.8%, 44.5%));
+            filter: drop-shadow(15px 5px 10px hsl(0, 0%, 45.1%));
             border-radius: 40%;
             transition: all 0.3s ease-in-out;
         }
@@ -329,13 +357,13 @@ main {
             margin-bottom: 0.5em;
         }
 
-        a {
+        .skillBtn {
             font-size: var(--font3);
             text-decoration: none;
             color: var(--color2);
             font-weight: 500;
             display: inline-block;
-            margin-top: 1em;
+            margin-top: 1.7em;
 
             &:hover,
             &:focus {
@@ -353,7 +381,6 @@ main {
         gap: 1.3em;
         flex-wrap: wrap;
         text-align: center;
-        background-color: hsl(0, 6.2%, 87.5%);
         border-radius: 0.7em;
         transition: all 0.3s ease-in-out;
 
@@ -449,6 +476,30 @@ main {
         .sendIcon {
             transform: translateX(8px);
             transition: all 0.3s ease-in-out;
+        }
+    }
+
+    .modal {
+        width: 85%;
+        max-width: 43em;
+        border: 1px solid;
+        position: fixed;
+        padding: 4em;
+        margin: auto;
+        background-color: var(--color1);
+        line-height: 4em;
+
+        &::backdrop {
+            background: rgba(23, 23, 23, 0.357);
+        }
+
+        .modalContainer {
+            display: grid;
+            gap: 4em;
+        }
+
+        h3 {
+            font-size: var(--font3);
         }
     }
 }

@@ -19,9 +19,23 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
-  font-family: "Poppins", sans-serif;
   background-color: var(--color1);
   scroll-padding-top: var(--scrollPadding, 100px);
+}
+
+::-moz-placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
+:-ms-input-placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+input,
+textarea,
+::placeholder {
+  font-family: "Poppins", sans-serif;
 }
 
 @media (min-width: 662px) {
@@ -105,10 +119,27 @@ html {
   font-size: var(--font3);
   margin-top: 2em;
   letter-spacing: 0.2em;
+  line-height: 2em;
+}
+.para a {
+  text-decoration: none;
+  font-weight: 400;
+  color: var(--color2);
+  border-bottom: 1px solid;
 }
 
 .button {
   font-size: calc(var(--font3) - 0.4em);
+}
+
+.invalidMssg {
+  color: hsl(0deg, 100%, 49.6%);
+  text-align: center;
+  margin-bottom: 0.3em;
+  font-size: var(--font4);
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-1.5em);
+  opacity: 0;
 }
 
 .right {
@@ -127,6 +158,11 @@ html {
 }
 .bgWhite .bottom {
   transform: rotate(45deg) translate(-6px, -10px);
+}
+
+.toggleInvalidMssg {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 main {
@@ -216,7 +252,7 @@ main {
   position: relative;
 }
 .home .img img {
-  filter: drop-shadow(3px 3px 3px hsl(240deg, 12.8%, 44.5%));
+  filter: drop-shadow(15px 5px 10px hsl(0deg, 0%, 45.1%));
   border-radius: 40%;
   transition: all 0.3s ease-in-out;
 }
@@ -282,15 +318,15 @@ main {
   opacity: 0.85;
   margin-bottom: 0.5em;
 }
-.about .info a {
+.about .info .skillBtn {
   font-size: var(--font3);
   text-decoration: none;
   color: var(--color2);
   font-weight: 500;
   display: inline-block;
-  margin-top: 1em;
+  margin-top: 1.7em;
 }
-.about .info a:hover .fa, .about .info a:focus .fa {
+.about .info .skillBtn:hover .fa, .about .info .skillBtn:focus .fa {
   transform: translate(13px, 1px) !important;
 }
 .about .skills {
@@ -300,7 +336,6 @@ main {
   gap: 1.3em;
   flex-wrap: wrap;
   text-align: center;
-  background-color: hsl(0deg, 6.2%, 87.5%);
   border-radius: 0.7em;
   transition: all 0.3s ease-in-out;
 }
@@ -381,6 +416,29 @@ main {
 .contact .form .sendIcon {
   transform: translateX(8px);
   transition: all 0.3s ease-in-out;
+}
+.contact .modal {
+  width: 85%;
+  max-width: 43em;
+  border: 1px solid;
+  position: fixed;
+  padding: 4em;
+  margin: auto;
+  background-color: var(--color1);
+  line-height: 4em;
+}
+.contact .modal::-webkit-backdrop {
+  background: rgba(23, 23, 23, 0.357);
+}
+.contact .modal::backdrop {
+  background: rgba(23, 23, 23, 0.357);
+}
+.contact .modal .modalContainer {
+  display: grid;
+  gap: 4em;
+}
+.contact .modal h3 {
+  font-size: var(--font3);
 }
 
 @media (min-width: 662px) {

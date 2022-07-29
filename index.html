@@ -13,6 +13,7 @@
         referrerpolicy="no-referrer"
     />
     <script src="scripts.js" defer></script>
+    <script src="https://smtpjs.com/v3/smtp.js" defer></script>
 </head>
 <body>
     <main>
@@ -50,11 +51,7 @@
                 </div>
 
                 <div class="buttons">
-                    <button
-                        data-name="projects"
-                        class="btn pointer"
-                        onclick="navigateTo('#project')"
-                    >
+                    <button class="btn pointer" onclick="navigateTo('#project')">
                         My Projects
                     </button>
 
@@ -172,14 +169,25 @@
             <div class="aboutContainer">
                 <div class="info">
                     <h3 class="fw-500">Hi There , This is</h3>
+
                     <h1 class="name fw-500">Mohammad Naeemul Abrar Nasib</h1>
+
                     <p class="para fw-300">
                         I like to call my self a Front-end-developer. Starting in 2021, i've learnt
                         Basic and Advance topics of Web-development and completed a couple of
                         projects. Now i'm looking for an opportunity to make myself experienced in
-                        real world projects.
+                        real world projects. And here is my
+                        <a
+                            href="https://drive.google.com/file/d/1p8kVJKyIu89hLgdqEN2yOwKNGl2qWXGM/view?usp=sharing"
+                            target="_blank"
+                        >
+                            resume</a
+                        >.
                     </p>
-                    <a href="#skills"> I'm skilled in ..<i class="fa fa-arrow-right"></i> </a>
+
+                    <a href="#skills" class="skillBtn">
+                        I'm skilled in ..<i class="fa fa-arrow-right"></i>
+                    </a>
                 </div>
 
                 <div class="skills" id="skills">
@@ -203,7 +211,7 @@
             <div class="contactContainer">
                 <div class="contactInfo">
                     <a href="https://www.facebook.com/naeemulabrar.nasiv" target="_blank">
-                        <i class="fa-brands fa-facebook-square">
+                        <i class="fa-brands fa-facebook-f">
                             <span>Mohammad Naeemul Abrar Nasib</span>
                         </i>
                     </a>
@@ -212,12 +220,12 @@
                         href="https://www.linkedin.com/in/mohammad-naeemul-abrar-nasib-29313018b"
                         target="_blank"
                     >
-                        <i class="fa-brands fa-linkedin">
+                        <i class="fa-brands fa-linkedin-in">
                             <span>Mohammad Naeemul Abrar Nasib</span>
                         </i>
                     </a>
 
-                    <a href="mailto:naeemulavrar155@gmail.com" target="_self">
+                    <a href="mailto:mohammadnasib111@gmail.com" target="_self">
                         <i class="fa-solid fa-envelope">
                             <span> mohammadnasib111@gmail.com </span>
                         </i>
@@ -227,19 +235,23 @@
                 <h2><span>or</span></h2>
 
                 <div class="form">
-                    <form action="#">
-                        <input type="text" placeholder="Your name" required />
+                    <form action="#" data-form="form">
+                        <input type="text" data-name="name" placeholder="Your name" required />
 
-                        <input type="text" placeholder="Your email" required />
+                        <input type="text" data-email="email" placeholder="Your email" required />
+
+                        <p class="invalidMssg">Please write a valid email !</p>
 
                         <textarea
                             name="message"
+                            data-message="message"
                             cols="30"
                             rows="10"
                             placeholder="Your message"
                             required
                             aria-expanded="false"
                         ></textarea>
+
                         <button class="btn pointer" type="submit">
                             Send
 
@@ -247,6 +259,14 @@
                         </button>
                     </form>
                 </div>
+
+                <dialog class="modal" id="modal">
+                    <div class="modalContainer">
+                        <h3 class="fw-400">Thanks for your message. I will contact you soon.</h3>
+
+                        <button class="btn pointer" onclick="closeModal()">Close</button>
+                    </div>
+                </dialog>
             </div>
         </section>
     </main>
