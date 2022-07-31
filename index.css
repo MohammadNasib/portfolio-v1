@@ -132,16 +132,6 @@ textarea,
   font-size: calc(var(--font3) - 0.4em);
 }
 
-.invalidMssg {
-  color: hsl(0deg, 100%, 49.6%);
-  text-align: center;
-  margin-bottom: 0.3em;
-  font-size: var(--font4);
-  transition: all 0.3s ease-in-out;
-  transform: translateY(-1.5em);
-  opacity: 0;
-}
-
 .right {
   right: 0 !important;
 }
@@ -420,7 +410,7 @@ main {
 .contact .modal {
   width: 85%;
   max-width: 43em;
-  border: 1px solid;
+  border: none;
   position: fixed;
   padding: 4em;
   margin: auto;
